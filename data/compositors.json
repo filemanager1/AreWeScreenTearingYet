@@ -13,7 +13,129 @@
       "Requires KWin 5.27+."
     ],
     "history": [
-        { "date": "2023-02-14", "version": "5.27", "note": "Initial support added via wp_tearing_control_v1" }
+        { "date": "2023-02-14", "updateTitle": "Version 5.27", "note": "Initial support added via wp_tearing_control_v1", "source": "https://kde.org/announcements/changelogs/plasma/5/5.26.5-5.27.0/" }
+    ]
+  },
+  {
+    "slug": "gnome",
+    "name": "GNOME",
+    "core_compositor": "Mutter",
+    "category": "Desktop Environment",
+    "status": "WIP",
+    "execution": "Unknown",
+    "instruction": "N/A",
+    "website": "https://kde.org/plasma-desktop/",
+    "history": [
+      { "date": "2024-06-04", "updateTitle": "Draft Made", "note": "Opened MR Draft", "source": "https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3797" }
+    ]
+  },
+  {
+    "slug": "cosmic",
+    "name": "COSMIC",
+    "core_compositor": "cosmic-comp",
+    "category": "Desktop Environment",
+    "status": "Planned",
+    "execution": "Unknown",
+    "instruction": "N/A",
+    "website": "https://system76.com/cosmic",
+    "history": [
+      { "date": "2023-12-18", "updateTitle": "Issue Acknowledged", "note": "Acknowledged by Developers. needs two PRs to be merged in order to support it. (check niri's details)", "source": "https://github.com/pop-os/cosmic-comp/issues/248#issuecomment-1860304228" }
+    ]
+  },
+  {
+    "slug": "cinnamon",
+    "name": "Cinnamon",
+    "core_compositor": "Muffin",
+    "category": "Desktop Environment",
+    "status": "N/A",
+    "execution": "Unknown",
+    "instruction": "N/A",
+    "website": "https://projects.linuxmint.com/cinnamon/",
+    "history": [
+    ]
+  },
+  {
+    "slug": "pantheon",
+    "name": "Pantheon",
+    "core_compositor": "gala",
+    "category": "Desktop Environment",
+    "status": "N/A",
+    "execution": "Unknown",
+    "instruction": "N/A",
+    "website": "https://elementary.io/",
+    "history": [
+    ]
+  },
+  {
+    "slug": "enlightenment",
+    "name": "Enlightenment",
+    "core_compositor": "enlightenment",
+    "category": "Desktop Environment",
+    "status": "N/A",
+    "execution": "Unknown",
+    "instruction": "N/A",
+    "website": "https://www.enlightenment.org/about-enlightenment",
+    "history": [
+    ]
+  },
+  {
+    "slug": "dde",
+    "name": "Deepin Desktop Environment",
+    "core_compositor": "Treeland",
+    "category": "Desktop Environment",
+    "status": "N/A",
+    "execution": "Unknown",
+    "instruction": "N/A",
+    "website": "https://www.enlightenment.org/about-enlightenment",
+    "history": [
+    ]
+  },
+  {
+    "slug": "niri",
+    "name": "Niri",
+    "core_compositor": "niri",
+    "category": "Standalone Compositor",
+    "status": "Planned",
+    "execution": "Unknown",
+    "instruction": "N/A",
+    "website": "https://niri-wm.github.io/niri/",
+    "history": [
+      { "date": "2024-12-08", "updateTitle": "Issue Acknowledged", "note": "Being Worked on, needs two PRs to be merged in order to support it.", "source": "https://github.com/niri-wm/niri/issues/844#issue-2725148104" }
+    ]
+  },
+  {
+    "slug": "labwc",
+    "name": "labwc",
+    "core_compositor": "labwc",
+    "category": "Standalone Compositor",
+    "status": "Merged",
+    "execution": "Great",
+    "instruction": "<core>\n ...\n // Ideal mode <allowTearing>fullscreenForced</allowTearing>\n // Okay mode <allowTearing>yes</allowTearing>\n ... \n </core>",
+    "website": "https://labwc.github.io/",
+    "notes": [
+      "Notifications/Overlays may VSync again your window. (Not Tested)",
+      "Use fullscreenForced to have the best experience."
+    ],
+    "history": [
+      { "date": "2024-12-08", "updateTitle": "Version 0.7.1", "note": "Added tearing support via wp_tearing_control_v1", "source": "https://github.com/labwc/labwc/releases/tag/0.7.1" }
+    ]
+  },
+  {
+    "slug": "jay",
+    "name": "Jay",
+    "core_compositor": "jay",
+    "category": "Standalone Compositor",
+    "status": "Merged",
+    "execution": "Great",
+    "instruction": "// Expect it to work no need to config \nhttps://github.com/mahkoh/jay/blob/master/toml-spec/spec/spec.generated.md#tearingmode\n tearing.mode = \"variant3\" <---- (default) ",
+    "website": "https://github.com/mahkoh/jay",
+    "notes": [
+      "Notifications/Overlays may VSync again your window.",
+      "No need to config unless your window doesn't request tearing.",
+      "variant1 may give a better experience. \"Tearing is enabled when one or more applications are displayed fullscreen\""
+    ],
+    "history": [
+      { "date": "2024-12-08", "updateTitle": "Version 1.5.0", "note": "Added tearing support via wp_tearing_control_manager_v1", "source": "https://github.com/mahkoh/jay/releases/tag/v1.5.0" }
     ]
   },
   {
@@ -22,13 +144,99 @@
     "core_compositor": "Hyprland",
     "category": "Standalone Compositor",
     "status": "Merged",
-    "execution": "Good",
+    "execution": "Okay",
     "instruction": "general { allow_tearing = true } + windowrule",
     "website": "https://hyprland.org/",
     "notes": [
       "Requires per-window rules for best experience.",
-      "Supports immediate presentation even on XWayland."
+      "Supports immediate presentation even on XWayland.",
+      "Notifications/Overlays will cause VSync again your window."
     ],
-    "history": []
+    "history": [
+      { "date": "2024-12-08", "updateTitle": "Version 0.31.0", "note": "Added tearing support", "source": "https://github.com/hyprwm/Hyprland/releases/tag/v0.31.0" }
+    ]
+  },
+  {
+    "slug": "weston",
+    "name": "Weston",
+    "core_compositor": "weston",
+    "category": "Standalone Compositor",
+    "status": "Merged",
+    "execution": "Unknown",
+    "instruction": "N/A",
+    "website": "https://wayland.pages.freedesktop.org/weston/",
+    "notes": [
+      "While it supports the protocol, its use is not documented.",
+      "This project serves primarily as a reference implementation for a Wayland compositor."
+    ],
+    "history": [
+
+    ]
+  },
+  {
+    "slug": "sway",
+    "name": "Sway",
+    "core_compositor": "sway",
+    "category": "Standalone Compositor",
+    "status": "Merged",
+    "execution": "Great",
+    "instruction": "N/A",
+    "website": "https://swaywm.org/",
+    "notes": [
+      "Notifications/Overlays will cause your window to VSync again.",
+      "Should work by default if the window requests to tear."
+    ],
+    "history": [
+      { "date": "2024-10-27", "updateTitle": "Version 1.10", "note": "Added tearing support via wp_tearing_control_v1", "source": "https://github.com/swaywm/sway/releases/tag/1.10" }
+    ]
+  },
+  {
+    "slug": "river",
+    "name": "River",
+    "core_compositor": "river",
+    "category": "Standalone Compositor",
+    "status": "Merged",
+    "execution": "Okay",
+    "instruction": "riverctl??? \nhttps://codeberg.org/river/river/src/commit/aa1ef644488b10163f0b6e80694f48efb1999320/doc/riverctl.1.scd#L310",
+    "website": "https://isaacfreund.com/software/river/",
+    "notes": [
+      "While it supports the protocol, its use is not (well) documented.",
+      "Notifications/Overlays will cause your window to VSync again.",
+      "May depend on the specific River window manager implementation (not tested)."
+    ],
+    "history": [
+      { "date": "2024-12-9", "updateTitle": "Version 0.3.6", "note": "Added tearing support via wp_tearing_control_v1", "source": "https://codeberg.org/river/river/releases/tag/v0.3.6" }
+    ]
+  },
+  {
+    "slug": "wayfire",
+    "name": "Wayfire",
+    "core_compositor": "wayfire",
+    "category": "Standalone Compositor",
+    "status": "Planned",
+    "execution": "Unknown",
+    "instruction": "N/A",
+    "website": "https://wayfire.org/",
+    "notes": [
+    ],
+    "history": [
+      { "date": "2025-06-28", "updateTitle": "Issue Acknowledged", "note": "Acknowledged by Developer(s).", "source": "https://github.com/WayfireWM/wayfire/issues/2695#issuecomment-3016309150" }
+    ]
+  },
+  {
+    "slug": "mir",
+    "name": "Mir",
+    "core_compositor": "mir",
+    "category": "Standalone Compositor",
+    "status": "N/A",
+    "execution": "Unknown",
+    "instruction": "N/A",
+    "website": "https://github.com/canonical/mir",
+    "notes": [
+      "Mostly used in IOT devices.",
+      "Added because it might be used by the Unity Desktop in the future."
+    ],
+    "history": [
+    ]
   }
 ]

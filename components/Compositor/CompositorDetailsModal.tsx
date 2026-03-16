@@ -1,16 +1,16 @@
-import { 
-  Modal, 
-  Group, 
-  Title, 
-  Stack, 
-  Box, 
-  Text, 
-  Alert, 
-  Code, 
-  List, 
-  ThemeIcon, 
-  Divider, 
-  Timeline 
+import {
+  Modal,
+  Group,
+  Title,
+  Stack,
+  Box,
+  Text,
+  Alert,
+  Code,
+  List,
+  ThemeIcon,
+  Divider,
+  Timeline
 } from '@mantine/core';
 import { 
   IconInfoCircle, 
@@ -73,10 +73,11 @@ export function CompositorDetailsModal({ opened, onClose, selectedItem }: Compos
             <Timeline active={0} bulletSize={24} lineWidth={2}>
               {selectedItem.history.map((hist, idx) => (
                 <Timeline.Item 
-                  key={idx} 
-                  title={<Text fw={500} size="sm">Version {hist.version}</Text>}
+                  key={idx}
+                  title={<Text fw={500} size="sm"> {hist.updateTitle}</Text>}
                 >
                   <Text c="dimmed" size="sm" mt={4}>{hist.note}</Text>
+                  <Text c="dimmed" size="sm" mt={4}>Source: <a href={hist.source}>{hist.source}</a> </Text>
                   <Text size="xs" mt={4} c="gray">{hist.date}</Text>
                 </Timeline.Item>
               ))}

@@ -19,9 +19,11 @@ export function getStatusColor(status: DevelopmentStatus): MantineColor {
 export function getExecutionColor(quality: ExecutionQuality): MantineColor {
   switch (quality) {
     case 'Ideal':
-      return 'teal'; 
-    case 'Good':
-      return 'blue';
+      return 'teal';
+    case 'Great':
+      return 'purple';
+    case 'Okay':
+      return 'yellow';
     case 'Bad':
       return 'red';
     case 'Unknown':
