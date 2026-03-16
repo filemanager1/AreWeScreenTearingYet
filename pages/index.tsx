@@ -1,28 +1,80 @@
-import { Container, Title, Text, Button, Group } from '@mantine/core';
+import { useState } from 'react';
 import Head from 'next/head';
+import { GetStaticProps } from 'next';
+import { Container, Title, Stack, SimpleGrid, Text, Divider, Box, Group } from '@mantine/core';
+import { Header } from '@/components/Layout/Header';
+import { Footer } from '@/components/Layout/Footer';
+import { ProjectIntro } from '@/components/Landing/ProjectIntro';
+import { StatsRing } from '@/components/Landing/StatsRing';
+import { CompositorTable } from '@/components/Compositor/CompositorTable';
+import { InfoModalButton } from '@/components/UI/InfoModalButton';
+import { WhyModalContent } from '@/components/Landing/WhyModalContent';
+import { LegendModalContent } from '@/components/Landing/LegendModalContent';
+import { getCompositors } from '@/src/utils/data';
+import { CompositorItem } from '@/src/types/compositor';
+import { IconHelp, IconListDetails } from '@tabler/icons-react';
 
-export default function Home() {
+interface HomeProps {
+  compositors: CompositorItem[];
+}
+
+export default function Home({ compositors }: HomeProps) {
+  // Stats
+  const mergedCount = compositors.filter(c => c.status === 'Merged').length;
+  const idealCount = compositors.filter(c => c.execution === 'Ideal').length;
+  const totalCount = compositors.length;
+
   return (
     <>
       <Head>
-        <title>Are We Tearing Yet?</title>
-        <meta name="description" content="Tracking the state of Immediate Presentation in Wayland." />
+        <title>Are We Tearing Yet? - Wayland Immediate Presentation Tracker</title>
+        <meta name="description" content="Tracking the state of Immediate Presentation (screen tearing) support across Linux Wayland compositors." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container size="lg" py="xl">
-        <Title order={1} style={{ textAlign: 'center', marginTop: 50 }}>
-          Are We Tearing Yet?
-        </Title>
-        <Text c="dimmed" style={{ textAlign: 'center' }} size="lg" mt="md">
-          Tracking the state of Immediate Presentation (Screen Tearing) in Wayland.
-        </Text>
+
+      <Header />
+
+      <main>
         
-        <Group justify="center" mt="xl">
-          <Button size="lg" variant="default" component="a" href="/why">Why?</Button>
-          <Button size="lg">Explore Compositors</Button>
-        </Group>
-      </Container>
+        <Container size="lg" pb={80} mt={60}>
+          
+          <Box mb={50}>
+            <ProjectIntro />
+          </Box>
+
+          <Box mb={30}>
+             <StatsRing 
+                total={totalCount} 
+                merged={mergedCount} 
+                ideal={idealCount} 
+             />
+          </Box>
+
+          <Group justify="center" mb={50} gap="md">
+              <InfoModalButton label="Why Tearing?" title="Why Tearing?" icon={<IconHelp size={18}/>}>
+                  <WhyModalContent />
+              </InfoModalButton>
+              <InfoModalButton label="What do these mean?" title="What do these mean?" icon={<IconListDetails size={18}/>}>
+                  <LegendModalContent />
+              </InfoModalButton>
+          </Group>
+
+          <Box mb={60}>
+              <CompositorTable data={compositors} />
+          </Box>
+        </Container>
+      </main>
+
+      <Footer />
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const compositors = getCompositors();
+  return {
+    props: {
+      compositors,
+    },
+  };
+};
