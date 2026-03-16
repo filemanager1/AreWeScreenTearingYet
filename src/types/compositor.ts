@@ -1,10 +1,11 @@
 export type Category = 'Desktop Environment' | 'Standalone Compositor';
 export type DevelopmentStatus = 'Merged' | 'WIP' | 'Planned' | 'N/A';
-export type ExecutionQuality = 'Ideal' | 'Good' | 'Bad' | 'Unknown';
+export type ExecutionQuality = 'Ideal' | 'Great' | 'Okay' | 'Bad' | 'Unknown';
 
 export interface UpdateLog {
   date: string; // ISO 8601
-  version: string;
+  updateTitle: string;
+  source: string;
   note: string;
   reference_url?: string;
 }
