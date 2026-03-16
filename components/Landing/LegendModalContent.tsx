@@ -45,12 +45,17 @@ export function LegendModalContent() {
                 <List.Item
                     icon={<TierBadge quality="Ideal" />}
                 >
-                    <b>Ideal:</b> Works out of the box or with a simple GUI toggle. No glitches.
+                    <b>Ideal:</b> Works out of the box or with a simple GUI toggle. No glitches or UX problems.
                 </List.Item>
+               <List.Item
+                   icon={<TierBadge quality="Great" />}
+               >
+                   <b>Great:</b> Has great options or defaults but it has minor caveats.
+               </List.Item>
                 <List.Item
-                     icon={<TierBadge quality="Good" />}
+                     icon={<TierBadge quality="Okay" />}
                 >
-                     <b>Good:</b> Works well, but requires config files, env vars, or has minor caveats.
+                     <b>Okay:</b> Works well, but requires config files, env vars, or has minor caveats.
                 </List.Item>
                 <List.Item
                      icon={<TierBadge quality="Bad" />}
