@@ -167,7 +167,7 @@
     "website": "https://wayland.pages.freedesktop.org/weston/",
     "notes": [
       "While it supports the protocol, its use is not documented.",
-      "This project is mostly made with the purpose of giving an example of a Wayland Compositor."
+      "This project serves primarily as a reference implementation for a Wayland compositor."
     ],
     "history": [
 
@@ -183,7 +183,7 @@
     "instruction": "N/A",
     "website": "https://swaywm.org/",
     "notes": [
-      "Notifications/Overlays may VSync again your window. (Not Tested)",
+      "Notifications/Overlays will cause your window to VSync again.",
       "Should work by default if the window requests to tear."
     ],
     "history": [
@@ -201,8 +201,8 @@
     "website": "https://isaacfreund.com/software/river/",
     "notes": [
       "While it supports the protocol, its use is not (well) documented.",
-      "Notifications/Overlays may VSync again your window. (Not Tested)",
-      "It might depends on the Window manager that implements River (not tested)"
+      "Notifications/Overlays will cause your window to VSync again.",
+      "May depend on the specific River window manager implementation (not tested)."
     ],
     "history": [
       { "date": "2024-12-9", "updateTitle": "Version 0.3.6", "note": "Added tearing support via wp_tearing_control_v1", "source": "https://codeberg.org/river/river/releases/tag/v0.3.6" }
