@@ -150,7 +150,7 @@
     "notes": [
       "Requires per-window rules for best experience.",
       "Supports immediate presentation even on XWayland.",
-      "Notifications/Overlays will VSync again your window."
+      "Notifications/Overlays will cause VSync again your window."
     ],
     "history": [
       { "date": "2024-12-08", "updateTitle": "Version 0.31.0", "note": "Added tearing support", "source": "https://github.com/hyprwm/Hyprland/releases/tag/v0.31.0" }
