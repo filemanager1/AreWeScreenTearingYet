@@ -5,8 +5,7 @@ import classes from './Header.module.css';
 import { IconBrandGithub } from '@tabler/icons-react';
 
 const links = [
-  { link: '/', label: 'Home' },
-  { link: '/why', label: 'Why Tearing?' },
+  { link: '/', label: 'Home' }
 ];
 
 export function Header() {
@@ -30,21 +29,6 @@ export function Header() {
           <Link href="/" className={classes.logoText}>
             Are We Screen Tearing Yet?
           </Link>
-        </Group>
-
-        <Group gap={5} visibleFrom="xs">
-          {items}
-          <a 
-            href="https://github.com/filemanager1/AreWeScreenTearingYet/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className={classes.link}
-          >
-             <Group gap={4}>
-                <IconBrandGithub size={16} />
-                <span>GitHub</span>
-             </Group>
-          </a>
         </Group>
       </Container>
     </header>

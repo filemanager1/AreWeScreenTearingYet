@@ -2,8 +2,7 @@ import { Container, Group, Anchor, Text } from '@mantine/core';
 import classes from './Footer.module.css';
 
 const links = [
-  { link: 'https://github.com/filemanager1/AreWeScreenTearingYet/', label: 'Contribute on GitHub' },
-  { link: '/why', label: 'About Screen Tearing' },
+  { link: 'https://github.com/filemanager1/AreWeScreenTearingYet/', label: 'Contribute on GitHub' }
 ];
 
 export function Footer() {
