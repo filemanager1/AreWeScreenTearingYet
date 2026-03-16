@@ -19,7 +19,7 @@ export function getStatusColor(status: DevelopmentStatus): MantineColor {
 export function getExecutionColor(quality: ExecutionQuality): MantineColor {
   switch (quality) {
     case 'Ideal':
-      return 'teal'; // Gold-ish usually, but teal is good for "Perfect"
+      return 'teal'; 
     case 'Good':
       return 'blue';
     case 'Bad':
@@ -31,12 +31,7 @@ export function getExecutionColor(quality: ExecutionQuality): MantineColor {
   }
 }
 
-// Helper to determine the "Tier" (Metal) based on quality
-export function getTierMetal(quality: ExecutionQuality): string {
-    switch (quality) {
-        case 'Ideal': return 'Platinum';
-        case 'Good': return 'Gold';
-        case 'Bad': return 'Bronze';
-        default: return 'Stone';
-    }
+// Helper to determine the label based on quality
+export function getExecutionLabel(quality: ExecutionQuality): string {
+    return quality;
 }
