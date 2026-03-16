@@ -1,4 +1,4 @@
-# Are We Tearing Yet?
+# Are We Screen Tearing Yet?
 
 Tracking the status of Immediate Presentation (Screen Tearing) support across the Linux Wayland ecosystem.
 Inspired by [AreWeAntiCheatYet](https://areweanticheatyet.com/).
