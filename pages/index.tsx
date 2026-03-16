@@ -27,7 +27,7 @@ export default function Home({ compositors }: HomeProps) {
   return (
     <>
       <Head>
-        <title>Are We Tearing Yet? - Wayland Immediate Presentation Tracker</title>
+        <title>Are We Screen Tearing Yet?</title>
         <meta name="description" content="Tracking the state of Immediate Presentation (screen tearing) support across Linux Wayland compositors." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
