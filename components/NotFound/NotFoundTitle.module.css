@@ -10,9 +10,11 @@
   line-height: 1;
   margin-bottom: calc(1.5 * var(--mantine-spacing-xl));
 
+  /*
   @media (max-width: $mantine-breakpoint-sm) {
     font-size: 120px;
   }
+   */
 }
 
 .title {
@@ -21,9 +23,12 @@
   font-weight: 900;
   font-size: 38px;
 
+  /*
   @media (max-width: $mantine-breakpoint-sm) {
     font-size: 32px;
   }
+  */
+
 }
 
 .description {
