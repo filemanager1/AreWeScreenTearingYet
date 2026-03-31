@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next';
 import { Container, Title, Stack, SimpleGrid, Text, Divider, Box, Group } from '@mantine/core';
 import { Header } from '@/components/Layout/Header';
 import { Footer } from '@/components/Layout/Footer';
-import { ProjectIntro } from '@/components/Landing/ProjectIntro';
+import { ProjectIntro, ProjectQuote } from '@/components/Landing/ProjectIntro';
 import { StatsRing } from '@/components/Landing/StatsRing';
 import { CompositorTable } from '@/components/Compositor/CompositorTable';
 import { InfoModalButton } from '@/components/UI/InfoModalButton';
@@ -31,17 +31,15 @@ export default function Home({ compositors }: HomeProps) {
         <meta name="description" content="Tracking the state of Immediate Presentation (screen tearing) support across Linux Wayland compositors." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-
       <Header />
-
       <main>
-        
-        <Container size="lg" pb={80} mt={60}>
-          
+          <Container size="lg">
+              <ProjectIntro />
+          </Container>
+        <Container size="lg" pb={80}>
           <Box mb={50}>
-            <ProjectIntro />
+              <ProjectQuote />
           </Box>
-
           <Box mb={30}>
              <StatsRing 
                 total={totalCount} 
