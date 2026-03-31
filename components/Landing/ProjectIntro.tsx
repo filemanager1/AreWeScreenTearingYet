@@ -7,7 +7,7 @@ export function ProjectIntro() {
    return(
        <>
            <Group justify={'center'}>
-               <img src="/haimiyaTear.png" alt="lmaooo" className={classes.image}/>
+               <img src="/haimiyaTear.png" alt="Haimiya Mio <3" className={classes.image}/>
            </Group>
 
            <Container size="lg" pb={20} mt={20}>
