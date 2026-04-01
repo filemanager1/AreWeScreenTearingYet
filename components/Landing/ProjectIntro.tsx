@@ -1,4 +1,4 @@
-import {Avatar, Box, Button, Container, Group, Paper, Text, TypographyStylesProvider} from '@mantine/core';
+import {Avatar, Box, Button, Card, Container, Group, Image, Paper, Stack, Text, TypographyStylesProvider} from '@mantine/core';
 import classes from './ProjectIntro.module.css';
 import { IconQuote } from '@tabler/icons-react';
 import Link from "next/link";
@@ -6,24 +6,25 @@ import Link from "next/link";
 export function ProjectIntro() {
    return(
        <>
-           <Group justify={'center'}>
-               <img src="/haimiyaTear.png" alt="Haimiya Mio <3" className={classes.image}/>
-           </Group>
-
            <Container size="lg" pb={20} mt={20}>
-               <Text className={classes.title}>
-                   Are We Screen Tearing Yet?
-               </Text>
+               <Stack align="center" gap="lg">
+                   <Text className={classes.title}>
+                       Are We Screen Tearing Yet?
+                   </Text>
+                   <Image
+                       src="haimiyaTear.png"
+                       alt="Haimiya Mio <3"
+                       className={classes.image}
+                       w="45%"
+                       h="45%"
+                       fit="contain"
+                   />
+                   <Text className={classes.subtitle}>
+                       Tracking the state of Immediate Presentation (screen tearing) support across Linux Wayland compositors
+                       with the purpose of improving their respective implementations to get a better user experience.
+                   </Text>
+               </Stack>
            </Container>
-           <Group justify="center" className={classes.subtitle}>
-               <Text>
-                   Tracking the state of Immediate Presentation (screen tearing) support across Linux Wayland compositors
-                   with the purpose of improving their respective implementations to get a better user experience.
-               </Text>
-               <Button component={Link} href="/" variant="filled" size="md">
-                   Why?
-               </Button>
-           </Group>
        </>
    );
 }
