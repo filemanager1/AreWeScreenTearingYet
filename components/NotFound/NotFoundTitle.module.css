@@ -10,25 +10,28 @@
   line-height: 1;
   margin-bottom: calc(1.5 * var(--mantine-spacing-xl));
 
+  /*
   @media (max-width: $mantine-breakpoint-sm) {
     font-size: 120px;
   }
+   */
 }
 
 .title {
-  font-family: 'Outfit', var(--mantine-font-family);
+  font-family: 'Outfit', var(--mantine-font-family), serif;
   text-align: center;
   font-weight: 900;
   font-size: 38px;
 
+  /*
   @media (max-width: $mantine-breakpoint-sm) {
     font-size: 32px;
   }
+  */
+
 }
 
 .description {
   max-width: 500px;
-  margin: auto;
-  margin-top: var(--mantine-spacing-xl);
-  margin-bottom: calc(1.5 * var(--mantine-spacing-xl));
+  margin: var(--mantine-spacing-xl) auto calc(1.5 * var(--mantine-spacing-xl));
 }

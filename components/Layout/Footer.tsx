@@ -23,6 +23,9 @@ export function Footer() {
         <Text c="dimmed" size="sm">
           © {new Date().getFullYear()} Are We Screen Tearing Yet?
         </Text>
+        <Text c="dimmed" size="sm">
+          Made with love by FileManager1 & Wincohax
+        </Text>
         <Group className={classes.links}>{items}</Group>
       </Container>
     </div>
