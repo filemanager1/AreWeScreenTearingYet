@@ -24,7 +24,7 @@
     "status": "WIP",
     "execution": "Unknown",
     "instruction": "N/A",
-    "website": "https://kde.org/plasma-desktop/",
+    "website": "https://www.gnome.org/",
     "history": [
       { "date": "2024-06-04", "updateTitle": "Draft Made", "note": "Opened MR Draft", "source": "https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3797" }
     ]
@@ -86,7 +86,7 @@
     "status": "N/A",
     "execution": "Unknown",
     "instruction": "N/A",
-    "website": "https://www.enlightenment.org/about-enlightenment",
+    "website": "https://www.deepin.org/en/dde/",
     "history": [
     ]
   },
